@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import firebase from './components/firebase';
-import Card from './components/Card'
-import ItemList from './components/ItemList'
+import Card from './components/Card';
+import ItemList from './components/ItemList';
+
 const restaurantData = {
   name: "Ashish Restaurant",
   address: "102 - 103, Sai Residency, Amroli Katargam Road, Near Gajera School, Katargam, Surat",
@@ -40,19 +41,16 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      selectCard:null,
+      selectCard: -1,
       // selectCard:0,
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
     this.changeCard = this.changeCard.bind(this);
   }
 
   changeCard(number) {
-    this.setState({selectCard : number});
+    this.setState({ selectCard: number });
   }
-
-  
 
   handleChange(e) {
     this.setState({
@@ -60,19 +58,6 @@ class App extends Component {
     });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    const itemsRef = firebase.database().ref('items');
-    const item = {
-      title: this.state.currentItem,
-      user: this.state.username
-    }
-    itemsRef.push(item);
-    this.setState({
-      currentItem: '',
-      username: ''
-    });
-  }
   componentDidMount() {
     const itemsRef = firebase.database().ref('restaurant/3');
     itemsRef.on('value', (snapshot) => {
@@ -83,39 +68,48 @@ class App extends Component {
       });
     });
   }
-  removeItem(itemId) {
-    const itemRef = firebase.database().ref(`/items/${itemId}`);
-    itemRef.remove();
-  }
+
+  
+
   render() {
-    var {data,selectCard} = this.state;
+    var { data, selectCard } = this.state;
 
-    if (data && selectCard==null) {
+    if (data && selectCard == -1) {
       return (
-        <div className="restaurant-detail">
-          <h1 className="restaurant-Name">{restaurantData.name}</h1>
-          <p className="restaurant-address">{restaurantData.address}</p>
-          <div className="menu-list">
-          {
-
-            data.menu.map((menu,index) =>
+        <div>
+          <nav className="navbar navbar-light bg-success text-white justify-content-between">
+            <header>
+              <h5 className="restaurant-Name">{restaurantData.name}</h5>
+              <p className="restaurant-address">{restaurantData.address}</p>
+            </header>
+          </nav>
+          <div className="restaurant-detail">
+            <div className="menu-list">
               {
-                return <Card key={index} index={index} menu={menu} changeCard={this.changeCard}></Card>
+
+                data.menu.map((menu, index) => {
+                  return <Card key={index} index={index} menu={menu} changeCard={this.changeCard}></Card>
+                }
+                )
               }
-            )
-          }
+            </div>
           </div>
         </div>
       );
-    }else if (data && selectCard >= 0) {
-        return (
+    } else if (data && selectCard >= 0) {
+      return (
+        <div>
+          <nav className="navbar navbar-light bg-success text-white justify-content-between">
+            <h6 className="restaurant-Name">{data.menu[selectCard].type.toUpperCase()}</h6>
+            <button className="btn btn-outline-success pull-right text-white" type="button" onClick={() => this.changeCard(-1)}><b>Home</b></button>
+          </nav>
           <div className="restaurant-detail">
-            <h1 className="restaurant-Name">{restaurantData.name}</h1>
             <ItemList menu={data.menu[selectCard]} ></ItemList>
           </div>
-        );
-      }
-     else {
+        </div>
+      );
+    }
+    else {
       return (
         <div>
           <h2>Loading ... </h2>

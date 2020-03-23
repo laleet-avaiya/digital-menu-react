@@ -5,13 +5,13 @@ export default class ItemList extends Component {
         const menu = this.props.menu;
         return (
             <div>
-            <h3>{menu.type.toUpperCase()}</h3>
                 {
                     menu.items.map((item, index) =>
-                        <div key={index} className="card">
-                            <div className="container">
-                                <h4><b>{item.itemName}</b></h4>
-                                <p>{item.price}</p>
+                        <div key={index} className="item-card">
+                            <div className="item-container">
+                                <p><b>{item.itemName + "  "}</b><span className="veg-indian-vegetarian"></span></p>
+                                
+                                <p>{"Rs. "+  item.price}</p>
                             </div>
                         </div>
                     )

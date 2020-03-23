@@ -7,13 +7,9 @@ export default class Card extends Component {
     render() {
         const { menu, index } = this.props;
         return (
-            <div className="card" onClick={() => this.props.changeCard(index)}>
+            <div className="res-card" onClick={() => this.props.changeCard(index)}>
                 <div className="container">
-                    <h4><b>{menu.type.toUpperCase()}</b></h4>
-                    <img className="card-icon"
-                        src="https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350"
-                        alt="new"
-                    />
+                    <p className="card-title"><b>{menu.type.toUpperCase()}</b></p>
                 </div>
             </div>
         )
