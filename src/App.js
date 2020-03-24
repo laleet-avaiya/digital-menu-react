@@ -46,6 +46,8 @@ class App extends Component {
     }
 
     this.changeCard = this.changeCard.bind(this);
+    this.sentenceCase = this.sentenceCase.bind(this);
+    this.titleCase = this.titleCase.bind(this);
   }
 
   changeCard(number) {
@@ -56,6 +58,22 @@ class App extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+
+  titleCase(str) {
+    str = str.toLowerCase().split(' ');
+    for (var i = 0; i < str.length; i++) {
+      str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+    }
+    return str.join(' ');
+  }
+
+  sentenceCase(str) {
+    return str.replace(/[a-z]/i, function (letter) {
+
+      return letter.toUpperCase();
+
+    }).trim();
   }
 
   componentDidMount() {
@@ -69,18 +87,18 @@ class App extends Component {
     });
   }
 
-  
+
 
   render() {
     var { data, selectCard } = this.state;
 
-    if (data && selectCard == -1) {
+    if (data && selectCard === -1) {
       return (
-        <div>
+        <div className="home">
           <nav className="navbar navbar-light bg-success text-white justify-content-between">
             <header>
-              <h5 className="restaurant-Name">{restaurantData.name}</h5>
-              <p className="restaurant-address">{restaurantData.address}</p>
+              <h5 className="restaurant-Name">{this.titleCase(restaurantData.name.toLowerCase())}</h5>
+              <p className="restaurant-address">{this.titleCase(restaurantData.address.toLowerCase())}</p>
             </header>
           </nav>
           <div className="restaurant-detail">
@@ -100,8 +118,8 @@ class App extends Component {
       return (
         <div>
           <nav className="navbar navbar-light bg-success text-white justify-content-between">
-            <h6 className="restaurant-Name">{data.menu[selectCard].type.toUpperCase()}</h6>
-            <button className="btn btn-outline-success pull-right text-white" type="button" onClick={() => this.changeCard(-1)}><b>Home</b></button>
+            <h6 className="restaurant-Name">{this.titleCase(data.menu[selectCard].type.toLowerCase())}</h6>
+            <button className="btn btn-outline-warning pull-right " type="button" onClick={() => this.changeCard(-1)}><b>Home</b></button>
           </nav>
           <div className="restaurant-detail">
             <ItemList menu={data.menu[selectCard]} ></ItemList>
