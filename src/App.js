@@ -77,14 +77,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const itemsRef = firebase.database().ref('restaurant/3');
-    itemsRef.on('value', (snapshot) => {
-      let items = snapshot.val();
-      console.log(items);
-      this.setState({
-        data: items
+    var url = new URL(window.location.href);
+    var restaurant_id = url.searchParams.get("restaurant_id");
+    if(restaurant_id){
+      const itemsRef = firebase.database().ref('restaurant/' + restaurant_id);
+      itemsRef.on('value', (snapshot) => {
+        let items = snapshot.val();
+        console.log(items);
+        this.setState({
+          data: items
+        });
       });
-    });
+    }
   }
 
 
