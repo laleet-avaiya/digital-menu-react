@@ -77,8 +77,13 @@ class App extends Component {
   }
 
   componentDidMount() {
+    
     var url = new URL(window.location.href);
     var restaurant_id = url.searchParams.get("restaurant_id");
+    if(restaurant_id == null)
+    {
+        restaurant_id = prompt("Restaurant Id?");
+    }
     if(restaurant_id){
       const itemsRef = firebase.database().ref('restaurant/' + restaurant_id);
       itemsRef.on('value', (snapshot) => {
