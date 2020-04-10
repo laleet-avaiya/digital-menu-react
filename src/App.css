@@ -1,42 +1,41 @@
-.restaurant-detail{
+.restaurant-detail {
   margin: 10px;
 }
 
-.restaurant-address{
+.restaurant-address {
   text-align: justify;
   font-size: 12px;
 }
 
-.menu-list{
+.menu-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding:5px;
+  padding: 5px;
 }
 
 .res-card {
   flex: 0 50%;
   padding: 3px;
-  
 }
 
-.nav{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.nav {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* On mouse-over, add a deeper shadow */
 .res-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* Add some padding inside the card container */
 .container {
   padding: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
-.card-title{
+.card-title {
   flex-grow: 1;
   flex-basis: 0;
   padding: 10px;
@@ -44,38 +43,71 @@
   text-align: center;
 }
 
-.veg{
-  color:green;padding:0 .3em
+.veg {
+  color: green;
+  padding: 0 0.3em;
 }
 
-
-
-
-
-.item-card{
+.item-card {
   flex: 0 50%;
   padding: 3px;
 }
 
-.item-container{
+.item-container {
   padding: 10px;
-  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.3);
-  border-radius: 4px;
+  /* box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3); */
+  border-bottom: 1px solid gainsboro;
+  /* border-radius: 4px; */
 }
 
-.pull-left {float:left;}
-.pull-right {float:right;}
-
-.item-price{
-
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
 }
 
-p{
+.item-price {
+}
+
+p {
   margin: 0;
   padding: 0;
 }
 
-.badge{
+.badge {
   margin: 2px;
 }
 
+.icon-foodSymbol {
+  content: "\22a1";
+}
+
+._27EeV {
+  position: relative;
+  top: 5px;
+  display: inline-block;
+}
+
+.tKOaB {
+  color: #ad4728;
+  font-size: 0.8rem;
+}
+
+.non-veg-indian-vegetarian:before {
+  content: "\22a1";
+  color: #ad4728;
+}
+
+[class^="non-veg-"],
+[class*=" non-veg-"] {
+  font-family: "vegetarian";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
