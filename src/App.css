@@ -79,26 +79,6 @@ p {
   margin: 2px;
 }
 
-.icon-foodSymbol {
-  content: "\22a1";
-}
-
-._27EeV {
-  position: relative;
-  top: 5px;
-  display: inline-block;
-}
-
-.tKOaB {
-  color: #ad4728;
-  font-size: 0.8rem;
-}
-
-.non-veg-indian-vegetarian:before {
-  content: "\22a1";
-  color: #ad4728;
-}
-
 [class^="non-veg-"],
 [class*=" non-veg-"] {
   font-family: "vegetarian";
@@ -110,4 +90,9 @@ p {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.non-veg-indian-vegetarian:before {
+  content: "\22a1";
+  color: #ad4728;
 }
