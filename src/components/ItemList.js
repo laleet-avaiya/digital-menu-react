@@ -47,11 +47,6 @@ export default class ItemList extends Component {
               <br />
 
               <p className="item-price">{"Rs. " + item.price}</p>
-              {/* <p><b>{item.itemName + "  "}</b></p>
-                                {index % 2 === 1 ? <p className="badge badge-success">Veg</p> : <span></span>}
-                                {index % 2 === 0 ? <p className="badge badge-danger">Non Veg</p> : <span></span>}
-                                {index % 3 === 0 ? <p className="badge badge-info">Pure Jain</p> : <span></span>}
-                                <p><b>{item.itemName + "  "}</b><span className="veg-indian-vegetarian"></span></p> */}
             </div>
           </div>
         ))}
