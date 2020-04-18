@@ -32,20 +32,24 @@ export default class ItemList extends Component {
         {menu.items.map((item, index) => (
           <div key={index} className="item-card">
             <div className="item-container">
-              <p className="pull-left">
-                <b>{this.titleCase(item.itemName.toLowerCase()) + "  "}</b>
-              </p>
               {item.veg ? (
-                <p className="pull-right">
-                  <span className="veg-indian-vegetarian"></span>
-                </p>
+                <span className="veg-indian-vegetarian mr-2"></span>
               ) : (
-                <p className="pull-right">
-                  <span className="non-veg-indian-vegetarian"></span>
-                </p>
+                <span className="non-veg-indian-vegetarian mr-2"></span>
               )}
+              <span style={{ fontSize: "14px", fontWeight: "600" }}>
+                {this.titleCase(item.itemName.toLowerCase()) + "  "}
+              </span>
+              <div
+                style={{
+                  fontSize: "12px",
+                  fontWeight: "600",
+                  paddingLeft: "25px",
+                }}
+              >
+                {"Rs. " + item.price}
+              </div>
             </div>
-            <p className="item-price">{"Rs. " + item.price}</p>
           </div>
         ))}
       </div>

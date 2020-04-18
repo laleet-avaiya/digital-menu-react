@@ -1,58 +1,3 @@
-@font-face {
-  font-family: "vegetarian";
-  src: url("http://static.sasongsmat.nu/fonts/vegetarian.eot?53ylxw");
-  src: url("http://static.sasongsmat.nu/fonts/vegetarian.eot?#iefix53ylxw")
-      format("embedded-opentype"),
-    url("http://static.sasongsmat.nu/fonts/vegetarian.woff?53ylxw")
-      format("woff"),
-    url("http://static.sasongsmat.nu/fonts/vegetarian.ttf?53ylxw")
-      format("truetype"),
-    url("http://static.sasongsmat.nu/fonts/vegetarian.svg?53ylxw#vegetarian")
-      format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-[class^="veg-"],
-[class*=" veg-"] {
-  font-family: "vegetarian";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.veg-indian-vegetarian:before {
-  content: "\22a1";
-  color: green;
-}
-.veg-vegetarian:before {
-  content: "\24cb";
-  color: green;
-}
-.vegetarianicon {
-  font-family: "vegetarian";
-  color: green;
-}
-
-[class^="non-veg-"],
-[class*="non-veg-"] {
-  font-family: "vegetarian";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.non-veg-indian-vegetarian:before {
-  content: "\22a1";
-  color: #ad4728;
-}
-
 .restaurant-detail {
   margin: 10px;
 }
@@ -64,26 +9,14 @@
   padding: 5px;
 }
 
-.veg {
-  color: green;
-  padding: 0 0.3em;
-}
-
 .item-card {
   flex: 0 50%;
   padding: 3px;
-}
-
-.item-container {
-  padding: 10px;
   border-bottom: 1px solid gainsboro;
 }
 
-.pull-left {
-  float: left;
-}
-.pull-right {
-  float: right;
+.item-container {
+  padding: 5px;
 }
 
 .blue_grad {
@@ -170,4 +103,23 @@
 p {
   margin: 0;
   padding: 0;
+}
+
+/* ***************************  Icon  *******************************/
+
+[class^="non-veg-"],
+[class*="non-veg-"] {
+  font-family: "vegetarian";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.non-veg-indian-vegetarian:before {
+  content: "\22a1";
+  color: #ad4728;
 }

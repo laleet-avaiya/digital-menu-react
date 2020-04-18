@@ -25,9 +25,9 @@ export default class Card extends Component {
   }
 
   render() {
-    const { menu, index } = this.props;
+    const { menu } = this.props;
     return (
-      <div className="res-card" onClick={() => this.props.changeCard(index)}>
+      <div className="res-card" onClick={this.props.changeCard}>
         <div className="res-card-container">
           <div className="card-food-title">
             {this.titleCase(menu.type.toLowerCase())}

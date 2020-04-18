@@ -76,7 +76,7 @@ class App extends Component {
                     key={index}
                     index={index}
                     menu={menu}
-                    changeCard={this.changeCard}
+                    changeCard={() => this.changeCard(index)}
                   ></Card>
                 );
               })}
