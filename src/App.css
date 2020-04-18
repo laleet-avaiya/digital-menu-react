@@ -64,8 +64,6 @@
   padding: 5px;
 }
 
-/* Add some padding inside the card container */
-
 .veg {
   color: green;
   padding: 0 0.3em;
@@ -78,9 +76,7 @@
 
 .item-container {
   padding: 10px;
-  /* box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3); */
   border-bottom: 1px solid gainsboro;
-  /* border-radius: 4px; */
 }
 
 .pull-left {
@@ -90,19 +86,9 @@
   float: right;
 }
 
-.badge {
-  margin: 2px;
-}
-
 .blue_grad {
   height: auto;
   background-image: linear-gradient(#121c84, #8278da);
-}
-
-.container {
-  padding: 30px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
 }
 
 /* ****************************  Loading ******************************************/
