@@ -29,10 +29,10 @@ export default class Card extends Component {
     return (
       <div className="res-card" onClick={() => this.props.changeCard(index)}>
         <div className="res-card-container">
-          <p className="card-food-title">
+          <div className="card-food-title">
             {this.titleCase(menu.type.toLowerCase())}
-          </p>
-          <p className="card-food-sub-title">Food 1 | Food 2 | Food 3</p>
+          </div>
+          <div className="card-food-sub-title">Food 1 | Food 2 | Food 3</div>
         </div>
       </div>
     );

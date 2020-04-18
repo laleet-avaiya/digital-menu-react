@@ -44,10 +44,8 @@ export default class ItemList extends Component {
                   <span className="non-veg-indian-vegetarian"></span>
                 </p>
               )}
-              <br />
-
-              <p className="item-price">{"Rs. " + item.price}</p>
             </div>
+            <p className="item-price">{"Rs. " + item.price}</p>
           </div>
         ))}
       </div>

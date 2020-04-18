@@ -4,6 +4,7 @@ import firebase from "./components/firebase";
 import Card from "./components/Card";
 import ItemList from "./components/ItemList";
 import AppNavBar from "./components/AppNavBar";
+import { Spinner, Button } from "react-bootstrap";
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,10 @@ class App extends Component {
   }
 
   changeCard(number) {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     this.setState({ selectCard: number });
   }
 
@@ -70,7 +75,7 @@ class App extends Component {
         <div style={{ backgroundColor: "#f5fcff" }}>
           <AppNavBar
             navbarTitle={data.restaurant_name}
-            backButton={true}
+            backButton={false}
           ></AppNavBar>
           <div className="restaurant-detail m-0">
             <div className="menu-list">
@@ -91,18 +96,11 @@ class App extends Component {
     } else if (data && selectCard >= 0) {
       return (
         <div>
-          <nav className="navbar navbar-light bg-success text-white justify-content-between sticky-top ">
-            <h6 className="restaurant-Name">
-              {this.titleCase(data.menu[selectCard].type.toLowerCase())}
-            </h6>
-            <button
-              className="btn btn-outline-warning pull-right "
-              type="button"
-              onClick={() => this.changeCard(-1)}
-            >
-              <b>Home</b>
-            </button>
-          </nav>
+          <AppNavBar
+            navbarTitle={data.menu[selectCard].type}
+            backButton={true}
+            goBack={() => this.changeCard(-1)}
+          ></AppNavBar>
           <div className="restaurant-detail">
             <ItemList menu={data.menu[selectCard]}></ItemList>
           </div>
@@ -110,8 +108,15 @@ class App extends Component {
       );
     } else {
       return (
-        <div>
-          <h2>Loading ... </h2>
+        <div className="loading">
+          <Spinner animation="grow" variant="primary" />
+          <Spinner animation="grow" variant="secondary" />
+          <Spinner animation="grow" variant="success" />
+          <Spinner animation="grow" variant="danger" />
+          <Spinner animation="grow" variant="warning" />
+          <Spinner animation="grow" variant="info" />
+          <Spinner animation="grow" variant="light" />
+          <Spinner animation="grow" variant="dark" />
         </div>
       );
     }
