@@ -4,7 +4,7 @@ import firebase from "./components/firebase";
 import Card from "./components/Card";
 import ItemList from "./components/ItemList";
 import AppNavBar from "./components/AppNavBar";
-import { Spinner, Button } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 
 class App extends Component {
   constructor() {
@@ -15,7 +15,6 @@ class App extends Component {
     };
 
     this.changeCard = this.changeCard.bind(this);
-    this.sentenceCase = this.sentenceCase.bind(this);
     this.titleCase = this.titleCase.bind(this);
   }
 
@@ -39,14 +38,6 @@ class App extends Component {
       str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
     }
     return str.join(" ");
-  }
-
-  sentenceCase(str) {
-    return str
-      .replace(/[a-z]/i, function (letter) {
-        return letter.toUpperCase();
-      })
-      .trim();
   }
 
   componentDidMount() {
