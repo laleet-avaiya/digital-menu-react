@@ -3,6 +3,7 @@ import "./App.css";
 import firebase from "./components/firebase";
 import Card from "./components/Card";
 import ItemList from "./components/ItemList";
+import AppNavBar from "./components/AppNavBar";
 
 class App extends Component {
   constructor() {
@@ -66,18 +67,12 @@ class App extends Component {
 
     if (data && selectCard === -1) {
       return (
-        <div className="home">
-          <nav className="navbar navbar-light bg-success text-white justify-content-between">
-            <header>
-              <h5 className="restaurant-Name">
-                {this.titleCase(data.restaurant_name.toLowerCase())}
-              </h5>
-              <p className="restaurant-address">
-                {this.titleCase(data.restaurant_address.toLowerCase())}
-              </p>
-            </header>
-          </nav>
-          <div className="restaurant-detail">
+        <div style={{ backgroundColor: "#f5fcff" }}>
+          <AppNavBar
+            navbarTitle={data.restaurant_name}
+            backButton={true}
+          ></AppNavBar>
+          <div className="restaurant-detail m-0">
             <div className="menu-list">
               {data.menu.map((menu, index) => {
                 return (
