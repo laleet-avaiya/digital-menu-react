@@ -106,20 +106,3 @@ p {
 }
 
 /* ***************************  Icon  *******************************/
-
-[class^="non-veg-"],
-[class*="non-veg-"] {
-  font-family: "vegetarian";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.non-veg-indian-vegetarian:before {
-  content: "\22a1";
-  color: #ad4728;
-}

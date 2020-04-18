@@ -33,16 +33,24 @@ export default class ItemList extends Component {
           <div key={index} className="item-card">
             <div className="item-container">
               {item.veg ? (
-                <span className="veg-indian-vegetarian mr-2"></span>
+                <img
+                  className="mr-2"
+                  src={require("../assets/veg.png")}
+                  style={{ width: "18px" }}
+                />
               ) : (
-                <span className="non-veg-indian-vegetarian mr-2"></span>
+                <img
+                  className="mr-2"
+                  src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png"
+                  style={{ width: "22px" }}
+                />
               )}
-              <span style={{ fontSize: "14px", fontWeight: "600" }}>
+              <span style={{ fontSize: "20px", fontWeight: "600" }}>
                 {this.titleCase(item.itemName.toLowerCase()) + "  "}
               </span>
               <div
                 style={{
-                  fontSize: "12px",
+                  fontSize: "14px",
                   fontWeight: "600",
                   paddingLeft: "25px",
                 }}
