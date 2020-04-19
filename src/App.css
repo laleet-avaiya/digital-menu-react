@@ -105,4 +105,39 @@ p {
   padding: 0;
 }
 
-/* ***************************  Icon  *******************************/
+/* ***************************  Item-List  *******************************/
+
+.item-card {
+  flex: 0 100%;
+  margin: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* On mouse-over, add a deeper shadow */
+
+.item-card-container {
+  padding: 24px;
+  box-shadow: 0px 0px 9px 4px rgba(0, 125, 0, 0.2);
+  border-radius: 4px;
+}
+
+.item-card-food-title {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.item-card-food-sub-title {
+  font-weight: 500;
+  font-size: 14px;
+  padding-left: 28px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.pull-right {
+  float: right;
+}

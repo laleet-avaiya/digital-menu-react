@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import { Badge } from "react-bootstrap";
 
 export default class ItemList extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      quantity: 0,
+      cart: {},
+    };
 
     this.sentenceCase = this.sentenceCase.bind(this);
     this.titleCase = this.titleCase.bind(this);
@@ -27,16 +31,17 @@ export default class ItemList extends Component {
 
   render() {
     const menu = this.props.menu;
+    var { quantity } = this.state;
     return (
       <div>
         {menu.items.map((item, index) => (
           <div key={index} className="item-card">
-            <div className="res-card">
-              <div
-                className="res-card-container"
-                style={{ boxShadow: "0px 0px 9px 4px rgba(0, 125, 0, 0.2)" }}
-              >
-                <div className="card-food-title" style={{ fontSize: "16px" }}>
+            <div className="item-card">
+              <div className="item-card-container">
+                <div
+                  className="item-card-food-title"
+                  style={{ fontSize: "16px" }}
+                >
                   {item.veg ? (
                     <img
                       alt="veg"
@@ -54,11 +59,45 @@ export default class ItemList extends Component {
                   )}
                   {this.titleCase(item.itemName.toLowerCase()) + "  "}
                 </div>
-                <div
-                  className="card-food-sub-title"
-                  style={{ paddingLeft: "28px" }}
-                >
+                <div className="item-card-food-sub-title">
                   {"Rs. " + item.price}
+
+                  <div className="pull-right">
+                    <Badge
+                      variant="success"
+                      style={{ width: "60px", padding: "5px" }}
+                    >
+                      {quantity > 0 ? (
+                        <span style={{ fontSize: "13px" }}>
+                          <span
+                            className="mx-2"
+                            onClick={() => {
+                              this.setState({ quantity: quantity - 1 });
+                            }}
+                          >
+                            -
+                          </span>
+                          {quantity}
+                          <span
+                            className="mx-2"
+                            onClick={() => {
+                              this.setState({ quantity: quantity + 1 });
+                            }}
+                          >
+                            +
+                          </span>
+                        </span>
+                      ) : (
+                        <span
+                          onClick={() => {
+                            this.setState({ quantity: quantity + 1 });
+                          }}
+                        >
+                          ADD
+                        </span>
+                      )}
+                    </Badge>
+                  </div>
                 </div>
               </div>
             </div>
