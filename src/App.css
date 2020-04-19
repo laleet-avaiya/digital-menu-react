@@ -91,13 +91,13 @@
 .card-food-title {
   font-weight: 600;
   font-size: 20px;
-  color: "#808080" !important;
+  /* color: "#808080" !important; */
 }
 
 .card-food-sub-title {
   font-weight: 500;
   font-size: 14px;
-  color: "#ffa500" !important;
+  /* color: "#ffa500" !important; */
 }
 
 p {

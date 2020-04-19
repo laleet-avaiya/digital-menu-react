@@ -31,31 +31,35 @@ export default class ItemList extends Component {
       <div>
         {menu.items.map((item, index) => (
           <div key={index} className="item-card">
-            <div className="item-container">
-              {item.veg ? (
-                <img
-                  className="mr-2"
-                  src={require("../assets/veg.png")}
-                  style={{ width: "18px" }}
-                />
-              ) : (
-                <img
-                  className="mr-2"
-                  src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png"
-                  style={{ width: "22px" }}
-                />
-              )}
-              <span style={{ fontSize: "20px", fontWeight: "600" }}>
-                {this.titleCase(item.itemName.toLowerCase()) + "  "}
-              </span>
+            <div className="res-card">
               <div
-                style={{
-                  fontSize: "14px",
-                  fontWeight: "600",
-                  paddingLeft: "25px",
-                }}
+                className="res-card-container"
+                style={{ boxShadow: "0px 0px 9px 4px rgba(0, 125, 0, 0.2)" }}
               >
-                {"Rs. " + item.price}
+                <div className="card-food-title" style={{ fontSize: "16px" }}>
+                  {item.veg ? (
+                    <img
+                      alt="veg"
+                      className="mr-2"
+                      src={require("../assets/veg.png")}
+                      style={{ width: "16px" }}
+                    />
+                  ) : (
+                    <img
+                      alt="non-veg"
+                      className="mr-2"
+                      src="https://img.icons8.com/color/48/000000/non-vegetarian-food-symbol.png"
+                      style={{ width: "20px" }}
+                    />
+                  )}
+                  {this.titleCase(item.itemName.toLowerCase()) + "  "}
+                </div>
+                <div
+                  className="card-food-sub-title"
+                  style={{ paddingLeft: "28px" }}
+                >
+                  {"Rs. " + item.price}
+                </div>
               </div>
             </div>
           </div>
