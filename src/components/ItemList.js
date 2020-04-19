@@ -62,7 +62,7 @@ export default class ItemList extends Component {
                 <div className="item-card-food-sub-title">
                   {"Rs. " + item.price}
 
-                  <div className="pull-right">
+                  <div className="pull-right" style={{ display: "none" }}>
                     <Badge
                       variant="success"
                       style={{ width: "60px", padding: "5px" }}
